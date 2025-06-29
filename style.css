@@ -1,0 +1,123 @@
+body {
+  background-color: #f5f6fa;
+  font-family: 'Segoe UI', 'Meiryo', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 400px;
+  margin: 50px auto 0 auto;
+  padding: 24px 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  color: #333;
+  letter-spacing: 2px;
+}
+
+.input-area label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+  color: #555;
+}
+
+.input-area input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+.input-area input[type="text"]:focus {
+  outline: none;
+  border-color: #0057c4;
+  box-shadow: 0 0 0 2px rgba(0, 87, 196, 0.2);
+}
+
+.button-area button,
+.download-area button {
+  width: 80%;
+  padding: 12px 0;
+  margin: 12px auto;
+  background: #0057c4;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: block;
+}
+
+.button-area button:hover,
+.download-area button:enabled:hover {
+  background: #003d8f;
+}
+
+.download-area button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.output-area {
+  margin-top: 24px;
+}
+
+.output-area p {
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: #555;
+}
+
+.qr-result {
+  margin: 0 auto;
+  width: 180px;
+  height: 180px;
+  border: 2px dashed #999;
+  border-radius: 8px;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.qr-placeholder {
+  color: #bbb;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.qr-result img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 4px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px 16px;
+  }
+  
+  .qr-result {
+    width: 150px;
+    height: 150px;
+  }
+  
+  h1 {
+    font-size: 1.3rem;
+  }
+}
