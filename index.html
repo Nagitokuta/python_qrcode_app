@@ -4,30 +4,76 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QRコード生成アプリ</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin: 50px;
-        background-color: #f5f5f5;
-      }
-      .container {
-        background: white;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        max-width: 400px;
-        margin: 0 auto;
-      }
-    </style>
+    <meta
+      name="description"
+      content="テキストを入力してQRコードを生成し、ダウンロードできるWebアプリケーション"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
+    <main class="container" role="main">
       <h1>QRコード生成アプリ</h1>
-      <p>開発環境の準備が完了しました！</p>
-      <p>
-        このページは、開発環境が正しく準備できたことを確認するためのテストです。
-      </p>
-    </div>
+
+      <section class="input-section" aria-labelledby="input-heading">
+        <h2 id="input-heading" class="sr-only">テキスト入力</h2>
+        <div class="input-area">
+          <label for="qrText">テキストを入力してください:</label>
+          <input
+            type="text"
+            id="qrText"
+            name="qrText"
+            placeholder="例: https://example.com"
+            maxlength="500"
+            aria-describedby="input-help"
+            autocomplete="off"
+          />
+          <div id="input-help" class="sr-only">
+            QRコードに変換したいテキストを入力してください。最大500文字まで入力可能です。
+          </div>
+        </div>
+        <div class="button-area">
+          <button
+            id="generateBtn"
+            type="button"
+            aria-describedby="generate-help"
+          >
+            QRコード生成
+          </button>
+          <div id="generate-help" class="sr-only">
+            入力したテキストからQRコードを生成します
+          </div>
+        </div>
+      </section>
+
+      <section class="output-section" aria-labelledby="output-heading">
+        <h2 id="output-heading" class="sr-only">QRコード表示</h2>
+        <div class="output-area">
+          <p>生成されたQRコード:</p>
+          <div
+            id="qrResult"
+            class="qr-result"
+            role="img"
+            aria-label="生成されたQRコード画像"
+          >
+            <span class="qr-placeholder">ここにQRコードが表示されます</span>
+          </div>
+        </div>
+        <div class="download-area">
+          <button
+            id="downloadBtn"
+            type="button"
+            disabled
+            aria-describedby="download-help"
+          >
+            📥 ダウンロード
+          </button>
+          <div id="download-help" class="sr-only">
+            生成されたQRコード画像をPNGファイルとしてダウンロードします
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
